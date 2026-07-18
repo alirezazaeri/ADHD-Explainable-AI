@@ -1,5 +1,12 @@
-# Notebook publication status
+# Notebooks
 
-The original research notebooks are retained locally with their historical execution counts, figures, metrics, and outputs intact. They are not included in the current publication snapshot because saved outputs contain participant-level identifiers and records.
+The repository includes the two primary notebooks in execution order:
 
-A public notebook copy should be added only after the authors explicitly approve a privacy-preserving derivation and verify that removing participant-level outputs is consistent with the dataset terms and the project's preservation requirements.
+1. `01_data_exploration.ipynb`
+2. `02_modeling_and_testing.ipynb`
+
+Their recorded outputs, execution counts, figures, metrics, and metadata are preserved. The notebooks were not rerun during repository preparation.
+
+Dataset files are not included. Obtain the original dataset independently, follow its access and usage terms, and place the required files in `data/`. Run the notebooks from the `notebooks/` working directory in the order shown above. Generated train/test CSV files under `notebooks/final_datasets/` and checkpoint notebooks remain excluded from Git.
+
+Recorded outputs document the original experiment. They do not establish clinical validity, causation, regulatory compliance, or fairness certification.

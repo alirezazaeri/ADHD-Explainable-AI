@@ -118,12 +118,14 @@ No confidence intervals, hypothesis tests, calibration analysis, intersectional 
 ├── final_data/
 │   └── README.md
 ├── notebooks/
-│   └── README.md
+│   ├── README.md
+│   ├── 01_data_exploration.ipynb
+│   └── 02_modeling_and_testing.ipynb
 └── docs/
     └── images/
 ```
 
-The original notebooks remain local and excluded from Git because their saved outputs contain participant-level records. See [notebooks/README.md](notebooks/README.md).
+The two primary notebooks are included with their recorded saved outputs intact. They were not rerun during repository preparation. Checkpoint notebooks and generated train/test CSV files remain excluded. See [notebooks/README.md](notebooks/README.md).
 
 ## Technology stack
 
@@ -139,7 +141,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-Place authorized source files in `data/`. The original notebooks assume their working directory is `notebooks/`; their `../data` and `final_datasets` paths are relative to that location.
+Place authorized source files in `data/`. The included notebooks use `notebooks/` as their working directory; their `../data` and `final_datasets` paths are relative to that location.
 
 ## Notebook execution order
 
@@ -148,7 +150,7 @@ The recorded local workflow is:
 1. `01_data_exploration.ipynb`
 2. `02_modeling_and_testing.ipynb`
 
-Do not execute the notebooks until the source files are present and the participant-level output location has been confirmed. Running the first notebook writes derived CSV files under `notebooks/final_datasets/`, which is ignored by Git.
+Obtain the original dataset independently and place the required files in `data/` before execution. Running the first notebook writes derived CSV files under `notebooks/final_datasets/`, which remains ignored by Git.
 
 ## Reproducibility notes
 
