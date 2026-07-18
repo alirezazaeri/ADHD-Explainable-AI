@@ -175,12 +175,12 @@ The dataset concerns young participants and sensitive health-related characteris
 This project was developed by Alireza Zaeri and Fatemeh Sabourinia.
 
 - [Alireza Zaeri on GitHub](https://github.com/alirezazaeri)
-- Alireza Zaeri LinkedIn: pending verification of the author's exact profile URL
+- [Alireza Zaeri on LinkedIn](https://www.linkedin.com/in/alirezazaeri)
 - Fatemeh Sabourinia
 
 ## Dataset attribution
 
-The apparent upstream dataset is the WiDS Datathon 2025 Global Challenge dataset, described by WiDS Worldwide as derived from Healthy Brain Network data supplied by the Child Mind Institute. Confirm the exact competition citation and terms from the original download before reuse or publication.
+The project uses the WiDS Datathon 2025 Global Challenge dataset, derived from Healthy Brain Network data supplied by the Child Mind Institute. Users must verify the original competition citation, access conditions, and usage terms before reuse or redistribution.
 
 ## License status
 
