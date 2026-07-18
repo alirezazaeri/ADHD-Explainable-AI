@@ -47,9 +47,11 @@ notebooks/final_datasets/
 *.pickle
 *.joblib
 
-# Original notebooks currently contain participant-level saved outputs.
-# Keep them local until a separately approved publication copy is prepared.
+# Keep notebooks private by default; only the two owner-approved primary
+# notebooks below may be published with their preserved saved outputs.
 notebooks/*.ipynb
+!notebooks/01_data_exploration.ipynb
+!notebooks/02_modeling_and_testing.ipynb
 notebooks/*.html
 
 # Models and generated training state
