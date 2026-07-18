@@ -1,0 +1,90 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local environments and credentials
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Participant-level source and derived data
+data/*
+!data/README.md
+processed_data/*
+!processed_data/README.md
+final_data/*
+!final_data/README.md
+notebooks/final_datasets/
+**/train_final_with_labels.*
+**/test_final_with_labels.*
+**/*participant*.csv
+**/*participant*.tsv
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.parquet
+*.feather
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.joblib
+
+# Original notebooks currently contain participant-level saved outputs.
+# Keep them local until a separately approved publication copy is prepared.
+notebooks/*.ipynb
+notebooks/*.html
+
+# Models and generated training state
+*.model
+*.ckpt
+*.h5
+*.hdf5
+*.onnx
+*.pt
+*.pth
+catboost_info/
+lightning_logs/
+mlruns/
+
+# Logs, caches, temporary exports, backups, and archives
+*.log
+logs/
+cache/
+.cache/
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Private local reviews and task material
+Codex_Reports/
+reports/
+private_reports/
+prompts/
+prompt*.txt
+task*.txt
+pasted-text*.txt
