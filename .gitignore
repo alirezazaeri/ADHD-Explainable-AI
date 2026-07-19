@@ -22,6 +22,13 @@ env/
 .env
 .env.*
 !.env.example
+kaggle.json
+credentials*.json
+service-account*.json
+*.pem
+*.key
+.aws/
+.config/gcloud/
 
 # Participant-level source and derived data
 data/*
@@ -53,6 +60,9 @@ notebooks/*.ipynb
 !notebooks/01_data_exploration.ipynb
 !notebooks/02_modeling_and_testing.ipynb
 notebooks/*.html
+*.nbconvert.ipynb
+*_files/
+*.pdf
 
 # Models and generated training state
 *.model
@@ -65,6 +75,12 @@ notebooks/*.html
 catboost_info/
 lightning_logs/
 mlruns/
+artifacts/
+outputs/
+runs/
+shap_cache/
+shap_outputs/
+kpca_outputs/
 
 # Logs, caches, temporary exports, backups, and archives
 *.log
@@ -81,12 +97,13 @@ temp/
 *.tar.gz
 *.tgz
 *.7z
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
 
-# Private local reviews and task material
-Codex_Reports/
+# Local-only working material
 reports/
 private_reports/
-prompts/
-prompt*.txt
-task*.txt
-pasted-text*.txt
+local_notes/

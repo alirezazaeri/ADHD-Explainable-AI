@@ -22,6 +22,18 @@ The repository preserves historical results as evidence of the original experime
 
 This is a retrospective machine learning project, not a medical device. Its predictions must not be used to diagnose, screen, treat, or make decisions about individuals. SHAP values describe associations within a fitted model; they do not establish causation. Sex-disaggregated metrics are exploratory subgroup comparisons, not a fairness certification.
 
+## Documentation
+
+- [Model card](MODEL_CARD.md)
+- [Responsible use](RESPONSIBLE_USE.md)
+- [Dataset setup](docs/DATASET_SETUP.md)
+- [Historical methodology](docs/METHODOLOGY.md)
+- [Evaluation](docs/EVALUATION.md)
+- [Explainability](docs/EXPLAINABILITY.md)
+- [Fairness and bias](docs/FAIRNESS_AND_BIAS.md)
+- [Reproducibility](docs/REPRODUCIBILITY.md)
+- [Third-party notices](THIRD_PARTY_NOTICES.md)
+
 ## Project highlights
 
 - 1,213 merged participant records in the local source data
@@ -49,7 +61,7 @@ The filenames and embedded workbook provenance are consistent with the [WiDS Dat
 
 ## Data availability
 
-No source, processed, split, or participant-level dataset is published here. Authorized users must obtain the data from the original provider and comply with its current access, privacy, citation, and redistribution terms. See [data/README.md](data/README.md) for the expected local filenames.
+No complete source, processed, split, or separate participant-level dataset is published here. The two approved notebooks preserve their historical embedded outputs, but those outputs are not a substitute for obtaining the dataset or accepting the provider's terms. Authorized users must obtain the data from the [official Kaggle competition](https://www.kaggle.com/competitions/widsdatathon2025) and comply with its current access, privacy, citation, and redistribution rules. A Kaggle account and acceptance of the applicable competition rules may be required. See [dataset setup](docs/DATASET_SETUP.md) for the expected local filenames and publication boundary.
 
 ## Problem definition
 
@@ -110,6 +122,9 @@ No confidence intervals, hypothesis tests, calibration analysis, intersectional 
 ```text
 .
 ├── README.md
+├── MODEL_CARD.md
+├── RESPONSIBLE_USE.md
+├── THIRD_PARTY_NOTICES.md
 ├── requirements.txt
 ├── data/
 │   └── README.md
@@ -122,6 +137,12 @@ No confidence intervals, hypothesis tests, calibration analysis, intersectional 
 │   ├── 01_data_exploration.ipynb
 │   └── 02_modeling_and_testing.ipynb
 └── docs/
+    ├── DATASET_SETUP.md
+    ├── METHODOLOGY.md
+    ├── EVALUATION.md
+    ├── EXPLAINABILITY.md
+    ├── FAIRNESS_AND_BIAS.md
+    ├── REPRODUCIBILITY.md
     └── images/
 ```
 
@@ -160,11 +181,15 @@ Obtain the original dataset independently and place the required files in `data/
 - No serialized fitted model is present.
 - Exact end-to-end reproducibility has not been established in a clean environment.
 
+See [reproducibility](docs/REPRODUCIBILITY.md) for the preserved environment information and execution boundary.
+
 ## Methodological limitations
 
 Most importantly, the recorded preprocessing fits `StandardScaler` and Kernel PCA to the complete 1,213-row connectome matrix before selecting train and test rows. This exposes the dimensionality-reduction pipeline to held-out feature distributions and makes the reported test metrics optimistic as estimates of unseen-data performance. A future experiment should fit all learned preprocessing inside the training partition, preferably within each cross-validation fold, and then evaluate once on an untouched test set.
 
-Additional limitations include a single internal split, no external validation, no confidence intervals, no probability calibration analysis, no decision-curve analysis, and no recorded statistical testing of subgroup differences.
+KNN imputation, mutual-information selection, connectome transformation, and model scaling are also established outside the cross-validation folds. In addition, the same held-out set is used to compare the four models and select XGBoost, so it is not an untouched post-selection test set.
+
+Additional limitations include numeric treatment of coded demographic variables, a single internal split, no external validation, no confidence intervals, no probability calibration analysis, no decision-curve analysis, and no recorded statistical testing of subgroup differences. See [historical methodology](docs/METHODOLOGY.md) and [evaluation](docs/EVALUATION.md).
 
 ## Ethical and clinical limitations
 
@@ -180,8 +205,8 @@ This project was developed by Alireza Zaeri and Fatemeh Sabourinia.
 
 ## Dataset attribution
 
-The project uses the WiDS Datathon 2025 Global Challenge dataset, derived from Healthy Brain Network data supplied by the Child Mind Institute. Users must verify the original competition citation, access conditions, and usage terms before reuse or redistribution.
+The project uses the [WiDS Datathon 2025](https://www.kaggle.com/competitions/widsdatathon2025) Global Challenge dataset, derived from Healthy Brain Network data supplied by the Child Mind Institute. The [official WiDS event page](https://www.widsworldwide.org/events/event/wids-datathon-2025-unraveling-the-mysteries-of-the-female-brain/) provides challenge context. Users must obtain the data directly from the official provider and comply with current access, citation, privacy, and usage terms. Dataset access and usage are not granted by any repository licence.
 
 ## License status
 
-No project license is applied. The local materials do not establish complete code ownership, dataset redistribution rights, or permission to relicense upstream data. All rights remain with their respective owners until the authors complete a provenance and licensing review.
+No project licence is applied. The local materials do not establish complete code ownership, dataset redistribution rights, or permission to relicense upstream data. All rights remain with their respective owners until the authors complete a provenance and licensing review. See [third-party notices](THIRD_PARTY_NOTICES.md).
