@@ -28,6 +28,24 @@ Important interpretation constraints:
 
 The retained SHAP plots are global summaries across held-out examples. No separately designed local explanation for a named participant is presented as a public project result.
 
+Explanations from different fitted models are not interchangeable. Coefficient magnitude, tree split importance, and mean absolute SHAP value answer different questions and can change with scaling, correlation, background data, and model configuration. Their rankings should not be combined into a single universal feature hierarchy.
+
+## Review checklist for public explanations
+
+Before publishing or reusing an explanation, verify that it:
+
+- names the fitted model and the evaluated partition;
+- states whether the view is global or local;
+- identifies that the input is the transformed 39-feature representation;
+- distinguishes selected source variables from latent Kernel PCA coordinates;
+- states whether plotted feature values are standardized or coded;
+- avoids treating SHAP magnitude as causality, clinical importance, or effect size;
+- carries forward the preprocessing-leakage and test-reuse limitations;
+- contains no record-level values, identifiers, screenshots, or individual narratives;
+- does not infer fairness from `Sex_F` importance alone.
+
+An explanation that cannot satisfy these checks should remain unpublished or be relabeled as an exploratory technical artifact.
+
 ## Responsible interpretation
 
 Use the explanation outputs to inspect model behaviour and generate technical questions. Do not use them to infer causation, identify clinical biomarkers, justify treatment, certify fairness, or explain an individual in a healthcare decision.
