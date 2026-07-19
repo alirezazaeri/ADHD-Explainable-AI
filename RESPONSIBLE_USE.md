@@ -1,6 +1,6 @@
 # Responsible use
 
-## Research and educational context
+## Research and technical context
 
 This repository documents a historical machine-learning experiment. It is not a medical device, clinical decision-support system, diagnostic service, or deployment-ready product.
 

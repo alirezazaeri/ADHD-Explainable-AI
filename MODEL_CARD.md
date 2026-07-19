@@ -8,7 +8,7 @@ The selected historical model is XGBoost because it recorded the highest held-ou
 
 ## Intended use
 
-The project is intended for education, portfolio demonstration, and retrospective research-method exploration. It demonstrates multimodal feature preparation, model comparison, global explanation, and exploratory subgroup reporting.
+The project is intended for technical portfolio demonstration, retrospective machine-learning analysis, and explainable-AI methodology review. It demonstrates multimodal feature preparation, model comparison, global explanation, and exploratory subgroup reporting.
 
 ## Out-of-scope use
 
